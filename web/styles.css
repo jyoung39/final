@@ -1,0 +1,303 @@
+/* default values for older browsers. */
+header, main, nav, footer, figure, figcaption, aside, section, article {
+    display: block;
+}
+
+
+
+/* global settings. */
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* New for this year. */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+input[type="submit"]{
+    float: right;
+    clear: both;
+}
+
+input[type="text"]{
+    float: right;
+    clear: both;
+}
+
+#price{
+    float: right;
+}
+
+
+
+
+
+/* setting the background color. */
+body{
+    background-color: black;
+}
+
+/* styling the header. */
+header{
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 2px 2px 2px #ffffff;
+    font-size: 1.5em;
+    text-align: center;
+}
+h1 a{
+    text-decoration: none;
+    color: #000000;
+}
+
+/* navigation states. */
+nav a:link{
+    color: #5c7fa3;
+}
+nav a:visited{
+    color: #344873;
+}
+nav a:hover{
+    color: #ffffff;
+}
+
+/* styling the navigation bar. */
+nav{
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;  
+    font-size: 110%;
+    text-align: center;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    font-size: 1.2em;
+}
+nav li{
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+nav a{
+    text-decoration: none;
+}
+main{
+overflow: auto;
+}
+footer{
+    text-align: center;
+}
+
+
+
+/* home page settings. */
+h2{
+    text-align: center;
+}
+
+
+
+/* non-home page settings. */
+main div img{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#image_wrapper{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* grouping an image with text on the non-home page pages. */
+section{
+    clear: left;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: auto;
+}
+section img{
+    float: left;    
+}
+section div{
+    font-size: 1.2em;
+    margin-left: 12px;
+    margin-right: 80px;
+}
+hr{
+    margin-left: 180px;
+    margin-right: 80px;
+}
+
+/* ids */
+#wrapper{
+    max-width: 1024px;
+    background-color: lightgray;
+    margin-left: auto;
+    margin-right: auto;
+}
+#shopping_cart{
+    float: right;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 1px solid black;
+}
+#contact{
+    clear: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: right;
+}
+#mobile{
+    display: none;
+}
+#desktop{
+    display: inline;
+}
+#cheese_pizza_stepper{
+    float: right;
+    display: inline-block;
+}
+
+#col{
+    min-width: 300px;
+}
+#col2{
+    min-width: 100px;
+    text-align: center;
+}
+#col3{
+    min-width: 150px;
+    text-align: center;
+}
+#add_to_cart{
+    clear: both;
+    float: right;
+}
+
+/* classes */
+.content{
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+/* putting uncle guido on the right. */
+.guido{
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* form layout */
+/*form{
+    padding: 3em;
+    margin-right: 30px;
+}
+input, textArea{
+    display: block;
+    margin-bottom: 2em;
+}
+input[type="submit"]{
+    margin-left: 12em;
+}*/
+
+
+
+
+
+
+
+
+/* tablet css. */
+@media only screen and (max-width: 64em){
+    /* global settings. */
+    /* removing the black border around the page. */
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        padding-top: 1px;
+    }
+}
+
+
+
+/* phone css. */
+@media only screen and (max-width: 37.5em){
+    /* making the text smaller. */
+    header{
+        font-size: 1em;
+    }
+    h2{
+        font-size: 95%;
+    }
+    /* displaying the image above the text instead of next to it. */
+    section img{
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section div{
+        display: block;
+        font-size: 1em;
+        margin: 10px;
+    }
+    /* getting rid of the horizontal rule. */
+    hr{
+        display: none;
+    }
+    
+    /* ids */
+    #mobile{
+        display: inline;
+    }
+    #desktop{
+        display: none;
+    }
+    
+    /* classes */
+    .guido{
+        display: none;
+    }
+    .content{
+        font-size: 95%;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,88 @@
+<script>
+    function readCookie() {
+        var allcookies = document.cookie;
+
+        // Get all the cookies pairs in an array
+        cookiearray = allcookies.split(';');
+
+        // Now take key value pair out of this array
+        for (var i = 0; i < cookiearray.length; i++) {
+            var name = cookiearray[i].split('=')[0];
+            var value = cookiearray[i].split('=')[1];
+            //document.write("<b>Key: </b>" + name + "<br><br><b>Value: </b>" + value + "<br><br>");
+
+            if (name === "textarea") {
+                // set the textarea's text to be the value stored in cookiearray.
+                document.getElementById("textarea").value = value;
+                //document.getElementById("price").value = "Test";
+            }
+
+            if (name === " price") {
+                // set price's textbox to the value stored in cookiearray.
+                document.getElementById("price").value = value;
+            }
+        }       
+        document.getElementById("textarea").select();
+    }
+    
+    function setCookie() {
+        var str = document.getElementById("textarea").value;
+        document.cookie = "textarea=" + str + ";";
+
+        str = document.getElementById("price").value;
+        document.cookie = "price=" + str + ";";
+    }
+</script>
+
+
+
+
+<html>
+    <head>
+        <title>Guido's Quick Pantry</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    </head>
+    <body onload="readCookie()">
+        <div id='wrapper'>
+            <header>
+                <h1>
+                    <a href='index.html'>Guido's Quick Pantry</a>
+                </h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><b><a href='index.html'>Home</a></b></li>
+                    <li><b><a href='main_dishes.html'>Main Dishes</a></b></li>
+                </ul>
+            </nav>
+            <main>                
+                <div class="row">
+                    <div class="col-4"><img src="images/jacks_frozen_cheese_pizza.png" alt=""/></div>
+                    <div class="col-8">
+                        <textarea rows="5" cols="80" id="textarea"></textarea> 
+                    </div>
+                    </row>
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="detail_view.html">
+                                <input type="number" step="0.01" min="0.0" name="price" id="price" required><br>
+                                <input type="submit" value="Save" onclick="setCookie()" required>
+                            </form>  
+                        </div>
+                    </div>
+
+            </main>
+            <footer>
+                <small>
+                    <i>
+                        Copyright &copy 2018 Guido's Quick Pantry<br>
+                        <a href="contact_us.html">Guido's Quick Pantry</a>
+                    </i>
+                </small>
+            </footer>
+        </div>
+    </body>
+</html>

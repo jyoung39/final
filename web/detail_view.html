@@ -1,0 +1,96 @@
+<script>
+    function setCookie() {
+        var str = document.getElementById("textarea").innerHTML;
+        document.cookie = "textarea=" + str + ";";
+
+        str = document.getElementById("price").innerHTML;
+        document.cookie = "price=" + str + ";";
+    }
+
+    function readCookie() {
+        //if (document.cookie.indexOf("textarea") !== -1 && document.cookie("textarea").length > 0) {
+        // if the cookie exists, do this:
+        if (document.cookie.indexOf("textarea") !== -1) {
+
+            var allcookies = document.cookie;
+            // Get all the cookies pairs in an array
+            cookiearray = allcookies.split(';');
+            // Now take key value pair out of this array
+            for (var i = 0; i < cookiearray.length; i++) {
+                var name = cookiearray[i].split('=')[0];
+                var value = cookiearray[i].split('=')[1];
+                //document.write("<b>Key: </b>" + name + "<br><br><b>Value: </b>" + value + "<br><br>");
+
+                if (name === "textarea") {
+                    // set the textarea's text to be the value stored in cookiearray.
+                    document.getElementById("textarea").innerHTML = value;
+                }
+
+                if (name === " price") {
+                    // set price's textbox to the value stored in cookiearray.
+                    document.getElementById("price").innerHTML = value;
+                }
+            }
+        } else {
+            // else, do this:
+            document.getElementById("textarea").innerHTML = "Pizza gimmicks will come and go. This pizza favorite, however, will never fade away. It's cheese and nothing but cheese on this delicious pie. JACK'S savory marinara, 100% real Wisconsin cheese and our famous crispy thin preservative-free crust make this pizza a real treat. Stock up and have a few ready to feed the whole family on a moment's notice without breaking the bank.";
+            document.getElementById("price").innerHTML = "$3.19";
+        }
+    }
+</script>
+
+
+
+
+
+<html>
+    <head>
+        <title>Guido's Quick Pantry</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    </head>
+    <body onload="readCookie()">
+        <div id='wrapper'>
+            <header>
+                <h1>
+                    <a href='index.html'>Guido's Quick Pantry</a>
+                </h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><b><a href='index.html'>Home</a></b></li>
+                    <li><b><a href='main_dishes.html'>Main Dishes</a></b></li>
+                </ul>
+            </nav>
+            <main>
+                <div class="row">
+                    <div class="col-4"><img src="images/jacks_frozen_cheese_pizza.png" alt=""/></div>
+                    <div class="col-8">
+                        <p id="textarea"></p>
+                        <!-- <p id="textarea">Pizza gimmicks will come and go. This pizza favorite, however, will never fade away. It's cheese and nothing but cheese on this delicious pie. JACK'S savory marinara, 100% real Wisconsin cheese and our famous crispy thin preservative-free crust make this pizza a real treat. Stock up and have a few ready to feed the whole family on a moment's notice without breaking the bank.</p> -->
+                    </div>
+                    </row>
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="edit_page.html">
+                                <!-- <p id="price">$3.19</p> -->
+                                <p id="price"></p>
+                                <input type="submit" value="Edit" onclick="setCookie()">
+                            </form>  
+                        </div>
+                    </div>
+
+            </main>
+            <footer>
+                <small>
+                    <i>
+                        Copyright &copy 2018 Guido's Quick Pantry<br>
+                        <a href="contact_us.html">Guido's Quick Pantry</a>
+                    </i>
+                </small>
+            </footer>
+        </div>
+    </body>
+</html>
