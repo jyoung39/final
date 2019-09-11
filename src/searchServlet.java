@@ -23,6 +23,7 @@ public class searchServlet extends HttpServlet {
         ResultSet rset = null;
 
         try{
+            String searchTerm = request.getParameter("searchTerm");
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
 
             String path = getServletContext().getRealPath(DATABASE_PATH);
@@ -33,7 +34,7 @@ public class searchServlet extends HttpServlet {
 
             pstmt = conn.prepareStatement(sql);
 
-            //pstmt.setString(1, searchTerm);
+            pstmt.setString(1, searchTerm);
 
             rset = pstmt.executeQuery();
 
