@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Load properties file: item.properties -->
+    <context:property-placeholder location="item.properties"/>
+
+    <!-- Define your beans here -->
+    <bean id="myItem" class="springxml.beans.Item"></bean>
+    <bean id="myConsole" class="springxml.services.Console"></bean>
+    <bean id="myFile" class="springxml.services.File"></bean>
+
+
+    <bean id="myCheesePizza" class="springxml.beans.Item">
+        <!-- Setter injection -->
+        <constructor-arg ref="myConsole"/>
+
+        <!-- Inject literal values from properties file -->
+        <property name="id" value="${i.id}"/>
+        <property name="itemName" value="${i.name}"/>
+        <property name="itemDescription" value="${i.description}"/>
+        <property name="itemPrice" value="${i.price}"/>
+        <property name="imagePath" value="${i.path}"/>
+    </bean>
+
+
+</beans>
