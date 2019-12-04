@@ -17,6 +17,10 @@
           <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
           <element id="library" level="project" name="Spring MVC-4.3.18.RELEASE" />
           <element id="library" level="project" name="Hibernate 5.4.5-5.4.5" />
+          <element id="library" level="project" name="com.mchange:c3p0:0.9.5.4" />
+          <element id="library" level="project" name="commons-fileupload:commons-fileupload:1.4" />
+          <element id="library" level="project" name="jstl:jstl:1.2" />
+          <element id="library" level="project" name="org.hibernate.validator:hibernate-validator:6.1.0.Final" />
         </element>
       </element>
     </root>

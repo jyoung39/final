@@ -18,6 +18,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" />
+          <unit-entry name="mySessionFactory" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
@@ -62,5 +63,9 @@
     <orderEntry type="library" name="Spring-4.3.18.RELEASE" level="project" />
     <orderEntry type="library" name="Spring MVC-4.3.18.RELEASE" level="project" />
     <orderEntry type="library" name="Hibernate 5.4.5-5.4.5" level="project" />
+    <orderEntry type="library" name="com.mchange:c3p0:0.9.5.4" level="project" />
+    <orderEntry type="library" name="commons-fileupload:commons-fileupload:1.4" level="project" />
+    <orderEntry type="library" name="jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="org.hibernate.validator:hibernate-validator:6.1.0.Final" level="project" />
   </component>
 </module>

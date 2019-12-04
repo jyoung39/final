@@ -18,9 +18,13 @@ public class HibernateApp {
 
         try {
 
-            // creating a grocery item.
+            // creating a new grocery item.
             //GroceryItem item = new GroceryItem("Soda", "Ice cold cola", 4.99, "pepsi.jpg");
             //demo.createGroceryItem(item);
+
+            /*
+            * The number 804 will be different when you run it.
+            * */
 
             // reading a grocery item.
             //demo.readGroceryItem(804);

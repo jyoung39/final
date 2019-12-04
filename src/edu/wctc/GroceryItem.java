@@ -2,6 +2,8 @@ package edu.wctc;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "item")
@@ -12,12 +14,16 @@ public class GroceryItem {
     @Column(name = "item_id")
     private int id;
 
+    @NotNull(message = "required")
     @Column(name = "item_name")
     private String itemName;
 
+    @NotNull(message = "required")
     @Column(name = "item_desc")
     private String itemDescription;
 
+    @NotNull(message = "required")
+    @Min(value = 1, message = "must be greater than 0")
     @Column(name = "item_price")
     private double itemPrice;
 

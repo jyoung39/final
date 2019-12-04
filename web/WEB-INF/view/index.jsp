@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+
 <html>
 <head>
     <title>Guido's Quick Pantry</title>
@@ -5,18 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="resources/css/styles.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+
 </head>
 <body>
 <div id='wrapper'>
     <header>
         <h1>
-            <a href='index.html'>Guido's Quick Pantry</a>
+            <a href='${path}'>Guido's Quick Pantry</a>
         </h1>
     </header>
     <nav>
         <ul>
-            <li><b><a href='index.html'>Home</a></b></li>
-            <li><b><a href='main_dishes.html'>Main Dishes</a></b></li>
+            <li><b><a href='${path}'>Home</a></b></li>
+            <li><b><a href='${path}/mainDishes'>Main Dishes</a></b></li>
         </ul>
     </nav>
     <main>
